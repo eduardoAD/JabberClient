@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Buddy List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="BuddyListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +15,81 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zWO-IR-F6i">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Jabber Client" id="r3j-vI-8ga">
+                                        <barButtonItem key="leftBarButtonItem" title="Account" id="clp-OS-dVb">
+                                            <connections>
+                                                <action selector="showLogin" destination="vXZ-lx-hvc" id="S5T-Ay-P70"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Kbv-Wt-00W">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="buddyCell" id="8qB-UP-3h0">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8qB-UP-3h0" id="nIA-4q-0av">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="Aig-ac-ZtH"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="IoE-UY-ItJ"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kbv-Wt-00W" secondAttribute="trailing" id="2ar-Us-eHi"/>
+                            <constraint firstItem="Kbv-Wt-00W" firstAttribute="top" secondItem="zWO-IR-F6i" secondAttribute="bottom" id="5K2-fh-TUn"/>
+                            <constraint firstItem="Kbv-Wt-00W" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="F0e-BF-bZp"/>
+                            <constraint firstItem="zWO-IR-F6i" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="Jzq-vO-9Oq"/>
+                            <constraint firstItem="zWO-IR-F6i" firstAttribute="trailing" secondItem="Kbv-Wt-00W" secondAttribute="trailing" id="QRO-f3-9kr"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Kbv-Wt-00W" secondAttribute="bottom" id="TUp-8y-aUc"/>
+                            <constraint firstItem="zWO-IR-F6i" firstAttribute="leading" secondItem="Kbv-Wt-00W" secondAttribute="leading" id="ihf-jJ-dUg"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="zWO-IR-F6i"/>
+                                <exclude reference="Kbv-Wt-00W"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Jzq-vO-9Oq"/>
+                                <exclude reference="QRO-f3-9kr"/>
+                                <exclude reference="ihf-jJ-dUg"/>
+                                <exclude reference="2ar-Us-eHi"/>
+                                <exclude reference="5K2-fh-TUn"/>
+                                <exclude reference="F0e-BF-bZp"/>
+                                <exclude reference="TUp-8y-aUc"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="zWO-IR-F6i"/>
+                                <include reference="Kbv-Wt-00W"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Jzq-vO-9Oq"/>
+                                <include reference="QRO-f3-9kr"/>
+                                <include reference="ihf-jJ-dUg"/>
+                                <include reference="2ar-Us-eHi"/>
+                                <include reference="5K2-fh-TUn"/>
+                                <include reference="F0e-BF-bZp"/>
+                                <include reference="TUp-8y-aUc"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="tView" destination="Kbv-Wt-00W" id="GVE-Tf-9ca"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

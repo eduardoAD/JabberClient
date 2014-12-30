@@ -8,8 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface BuddyListViewController : UIViewController
 
+@property (nonatomic, retain) IBOutlet UITableView *tView;
+@property NSMutableArray *onlineBuddies;
+
+- (IBAction) showLogin;
 
 @end
 
