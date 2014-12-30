@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E4C786091A532B7800BC838F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C786081A532B7800BC838F /* main.m */; };
+		E4C7860C1A532B7800BC838F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7860B1A532B7800BC838F /* AppDelegate.m */; };
+		E4C7860F1A532B7800BC838F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7860E1A532B7800BC838F /* ViewController.m */; };
+		E4C786121A532B7800BC838F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C786101A532B7800BC838F /* Main.storyboard */; };
+		E4C786141A532B7800BC838F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C786131A532B7800BC838F /* Images.xcassets */; };
+		E4C786171A532B7800BC838F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C786151A532B7800BC838F /* LaunchScreen.xib */; };
+		E4C786231A532B7800BC838F /* JabberClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C786221A532B7800BC838F /* JabberClientTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4C7861D1A532B7800BC838F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4C785FB1A532B7800BC838F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4C786021A532B7800BC838F;
+			remoteInfo = JabberClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		E4C786031A532B7800BC838F /* JabberClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JabberClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C786071A532B7800BC838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C786081A532B7800BC838F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E4C7860A1A532B7800BC838F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		E4C7860B1A532B7800BC838F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		E4C7860D1A532B7800BC838F /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E4C7860E1A532B7800BC838F /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E4C786111A532B7800BC838F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E4C786131A532B7800BC838F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E4C786161A532B7800BC838F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		E4C7861C1A532B7800BC838F /* JabberClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JabberClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4C786211A532B7800BC838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4C786221A532B7800BC838F /* JabberClientTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JabberClientTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4C786001A532B7800BC838F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C786191A532B7800BC838F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E4C785FA1A532B7800BC838F = {
+			isa = PBXGroup;
+			children = (
+				E4C786051A532B7800BC838F /* JabberClient */,
+				E4C7861F1A532B7800BC838F /* JabberClientTests */,
+				E4C786041A532B7800BC838F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4C786041A532B7800BC838F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4C786031A532B7800BC838F /* JabberClient.app */,
+				E4C7861C1A532B7800BC838F /* JabberClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4C786051A532B7800BC838F /* JabberClient */ = {
+			isa = PBXGroup;
+			children = (
+				E4C7860A1A532B7800BC838F /* AppDelegate.h */,
+				E4C7860B1A532B7800BC838F /* AppDelegate.m */,
+				E4C7860D1A532B7800BC838F /* ViewController.h */,
+				E4C7860E1A532B7800BC838F /* ViewController.m */,
+				E4C786101A532B7800BC838F /* Main.storyboard */,
+				E4C786131A532B7800BC838F /* Images.xcassets */,
+				E4C786151A532B7800BC838F /* LaunchScreen.xib */,
+				E4C786061A532B7800BC838F /* Supporting Files */,
+			);
+			path = JabberClient;
+			sourceTree = "<group>";
+		};
+		E4C786061A532B7800BC838F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4C786071A532B7800BC838F /* Info.plist */,
+				E4C786081A532B7800BC838F /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4C7861F1A532B7800BC838F /* JabberClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4C786221A532B7800BC838F /* JabberClientTests.m */,
+				E4C786201A532B7800BC838F /* Supporting Files */,
+			);
+			path = JabberClientTests;
+			sourceTree = "<group>";
+		};
+		E4C786201A532B7800BC838F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4C786211A532B7800BC838F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E4C786021A532B7800BC838F /* JabberClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C786261A532B7800BC838F /* Build configuration list for PBXNativeTarget "JabberClient" */;
+			buildPhases = (
+				E4C785FF1A532B7800BC838F /* Sources */,
+				E4C786001A532B7800BC838F /* Frameworks */,
+				E4C786011A532B7800BC838F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = JabberClient;
+			productName = JabberClient;
+			productReference = E4C786031A532B7800BC838F /* JabberClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E4C7861B1A532B7800BC838F /* JabberClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4C786291A532B7800BC838F /* Build configuration list for PBXNativeTarget "JabberClientTests" */;
+			buildPhases = (
+				E4C786181A532B7800BC838F /* Sources */,
+				E4C786191A532B7800BC838F /* Frameworks */,
+				E4C7861A1A532B7800BC838F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4C7861E1A532B7800BC838F /* PBXTargetDependency */,
+			);
+			name = JabberClientTests;
+			productName = JabberClientTests;
+			productReference = E4C7861C1A532B7800BC838F /* JabberClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4C785FB1A532B7800BC838F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Organization;
+				TargetAttributes = {
+					E4C786021A532B7800BC838F = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					E4C7861B1A532B7800BC838F = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = E4C786021A532B7800BC838F;
+					};
+				};
+			};
+			buildConfigurationList = E4C785FE1A532B7800BC838F /* Build configuration list for PBXProject "JabberClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E4C785FA1A532B7800BC838F;
+			productRefGroup = E4C786041A532B7800BC838F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4C786021A532B7800BC838F /* JabberClient */,
+				E4C7861B1A532B7800BC838F /* JabberClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4C786011A532B7800BC838F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C786121A532B7800BC838F /* Main.storyboard in Resources */,
+				E4C786171A532B7800BC838F /* LaunchScreen.xib in Resources */,
+				E4C786141A532B7800BC838F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C7861A1A532B7800BC838F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4C785FF1A532B7800BC838F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C7860F1A532B7800BC838F /* ViewController.m in Sources */,
+				E4C7860C1A532B7800BC838F /* AppDelegate.m in Sources */,
+				E4C786091A532B7800BC838F /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4C786181A532B7800BC838F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4C786231A532B7800BC838F /* JabberClientTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4C7861E1A532B7800BC838F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4C786021A532B7800BC838F /* JabberClient */;
+			targetProxy = E4C7861D1A532B7800BC838F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4C786101A532B7800BC838F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C786111A532B7800BC838F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E4C786151A532B7800BC838F /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4C786161A532B7800BC838F /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4C786241A532B7800BC838F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E4C786251A532B7800BC838F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4C786271A532B7800BC838F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JabberClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4C786281A532B7800BC838F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = JabberClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E4C7862A1A532B7800BC838F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JabberClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JabberClient.app/JabberClient";
+			};
+			name = Debug;
+		};
+		E4C7862B1A532B7800BC838F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = JabberClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/JabberClient.app/JabberClient";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4C785FE1A532B7800BC838F /* Build configuration list for PBXProject "JabberClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C786241A532B7800BC838F /* Debug */,
+				E4C786251A532B7800BC838F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4C786261A532B7800BC838F /* Build configuration list for PBXNativeTarget "JabberClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C786271A532B7800BC838F /* Debug */,
+				E4C786281A532B7800BC838F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		E4C786291A532B7800BC838F /* Build configuration list for PBXNativeTarget "JabberClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4C7862A1A532B7800BC838F /* Debug */,
+				E4C7862B1A532B7800BC838F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4C785FB1A532B7800BC838F /* Project object */;
+}
