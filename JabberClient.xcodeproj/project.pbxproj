@@ -176,6 +176,8 @@
 		E48F2DA51A545CBD0084997C /* SMChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMChatViewController.xib; sourceTree = "<group>"; };
 		E48F2DA81A5477430084997C /* JabberClientAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JabberClientAppDelegate.h; sourceTree = "<group>"; };
 		E48F2DA91A5477430084997C /* JabberClientAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JabberClientAppDelegate.m; sourceTree = "<group>"; };
+		E48F2DAB1A5485870084997C /* SMChatDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMChatDelegate.h; sourceTree = "<group>"; };
+		E48F2DAC1A5485EE0084997C /* SMMessageDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessageDelegate.h; sourceTree = "<group>"; };
 		E4C786031A532B7800BC838F /* JabberClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JabberClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C786071A532B7800BC838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4C786081A532B7800BC838F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -557,6 +559,8 @@
 				E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */,
 				E48F2DA81A5477430084997C /* JabberClientAppDelegate.h */,
 				E48F2DA91A5477430084997C /* JabberClientAppDelegate.m */,
+				E48F2DAB1A5485870084997C /* SMChatDelegate.h */,
+				E48F2DAC1A5485EE0084997C /* SMMessageDelegate.h */,
 				E48F2DA31A545CBD0084997C /* SMChatViewController.h */,
 				E48F2DA41A545CBD0084997C /* SMChatViewController.m */,
 				E48F2DA51A545CBD0084997C /* SMChatViewController.xib */,
