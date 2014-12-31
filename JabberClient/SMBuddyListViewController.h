@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BuddyListViewController : UIViewController
+@interface SMBuddyListViewController : UIViewController
 
 @property (nonatomic, retain) IBOutlet UITableView *tView;
 @property NSMutableArray *onlineBuddies;

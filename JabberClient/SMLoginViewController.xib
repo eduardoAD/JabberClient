@@ -17,18 +17,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mN4-xX-nsO">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <items>
-                        <navigationItem id="SVV-Fd-Ldb">
-                            <barButtonItem key="leftBarButtonItem" title="Close" id="jgt-t1-lCZ">
-                                <connections>
-                                    <action selector="hideLogin" destination="-1" id="B9U-cN-Ab7"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dfx-JN-raR">
                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -48,61 +36,79 @@
                         <action selector="login" destination="-1" eventType="touchUpInside" id="fNU-bP-7ml"/>
                     </connections>
                 </button>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mN4-xX-nsO">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <items>
+                        <navigationItem id="SVV-Fd-Ldb">
+                            <barButtonItem key="leftBarButtonItem" title="Close" id="jgt-t1-lCZ">
+                                <connections>
+                                    <action selector="hideLogin" destination="-1" id="B9U-cN-Ab7"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="mN4-xX-nsO" firstAttribute="centerX" secondItem="dfx-JN-raR" secondAttribute="centerX" id="1DA-Gv-J35"/>
-                <constraint firstItem="bZD-Cc-EGx" firstAttribute="top" secondItem="dfx-JN-raR" secondAttribute="bottom" constant="8" id="5R7-qS-ls1"/>
+                <constraint firstItem="bZD-Cc-EGx" firstAttribute="top" secondItem="dfx-JN-raR" secondAttribute="bottom" constant="8" id="5R7-qS-ls1">
+                    <variation key="widthClass=compact" constant="9"/>
+                </constraint>
                 <constraint firstItem="dfx-JN-raR" firstAttribute="top" secondItem="mN4-xX-nsO" secondAttribute="bottom" constant="8" id="8va-PA-kn3"/>
                 <constraint firstAttribute="trailing" secondItem="1xg-5B-XXZ" secondAttribute="trailing" constant="8" id="9KB-AB-QGq"/>
                 <constraint firstItem="mN4-xX-nsO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="PKK-Qc-nPs"/>
-                <constraint firstItem="1xg-5B-XXZ" firstAttribute="top" secondItem="bZD-Cc-EGx" secondAttribute="bottom" constant="8" id="aUc-wZ-pjc"/>
+                <constraint firstItem="1xg-5B-XXZ" firstAttribute="top" secondItem="bZD-Cc-EGx" secondAttribute="bottom" constant="8" id="aUc-wZ-pjc">
+                    <variation key="widthClass=compact" constant="7"/>
+                </constraint>
                 <constraint firstAttribute="trailing" secondItem="dfx-JN-raR" secondAttribute="trailing" constant="8" id="g1R-gt-02E"/>
                 <constraint firstItem="bZD-Cc-EGx" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="lMx-Ip-q0a"/>
                 <constraint firstAttribute="trailing" secondItem="bZD-Cc-EGx" secondAttribute="trailing" constant="8" id="uee-VP-858"/>
-                <constraint firstItem="mN4-xX-nsO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="v8w-SU-hg8"/>
+                <constraint firstItem="mN4-xX-nsO" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" id="v8w-SU-hg8">
+                    <variation key="widthClass=compact" constant="20"/>
+                </constraint>
                 <constraint firstItem="dfx-JN-raR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="ygm-Ln-D3g"/>
             </constraints>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="mN4-xX-nsO"/>
                     <exclude reference="dfx-JN-raR"/>
                     <exclude reference="bZD-Cc-EGx"/>
                     <exclude reference="1xg-5B-XXZ"/>
+                    <exclude reference="mN4-xX-nsO"/>
                 </mask>
                 <mask key="constraints">
-                    <exclude reference="1DA-Gv-J35"/>
-                    <exclude reference="PKK-Qc-nPs"/>
-                    <exclude reference="v8w-SU-hg8"/>
-                    <exclude reference="8va-PA-kn3"/>
-                    <exclude reference="g1R-gt-02E"/>
-                    <exclude reference="ygm-Ln-D3g"/>
                     <exclude reference="5R7-qS-ls1"/>
                     <exclude reference="lMx-Ip-q0a"/>
                     <exclude reference="uee-VP-858"/>
+                    <exclude reference="8va-PA-kn3"/>
+                    <exclude reference="g1R-gt-02E"/>
+                    <exclude reference="ygm-Ln-D3g"/>
                     <exclude reference="9KB-AB-QGq"/>
                     <exclude reference="aUc-wZ-pjc"/>
+                    <exclude reference="1DA-Gv-J35"/>
+                    <exclude reference="PKK-Qc-nPs"/>
+                    <exclude reference="v8w-SU-hg8"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
-                    <include reference="mN4-xX-nsO"/>
                     <include reference="dfx-JN-raR"/>
                     <include reference="bZD-Cc-EGx"/>
                     <include reference="1xg-5B-XXZ"/>
+                    <include reference="mN4-xX-nsO"/>
                 </mask>
                 <mask key="constraints">
-                    <include reference="1DA-Gv-J35"/>
-                    <include reference="PKK-Qc-nPs"/>
-                    <include reference="v8w-SU-hg8"/>
-                    <include reference="8va-PA-kn3"/>
-                    <include reference="g1R-gt-02E"/>
-                    <include reference="ygm-Ln-D3g"/>
                     <include reference="5R7-qS-ls1"/>
                     <include reference="lMx-Ip-q0a"/>
                     <include reference="uee-VP-858"/>
+                    <include reference="8va-PA-kn3"/>
+                    <include reference="g1R-gt-02E"/>
+                    <include reference="ygm-Ln-D3g"/>
                     <include reference="9KB-AB-QGq"/>
                     <include reference="aUc-wZ-pjc"/>
+                    <include reference="1DA-Gv-J35"/>
+                    <include reference="PKK-Qc-nPs"/>
+                    <include reference="v8w-SU-hg8"/>
                 </mask>
             </variation>
         </view>

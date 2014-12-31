@@ -7,7 +7,7 @@
         <!--Buddy List View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="BuddyListViewController" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="SMBuddyListViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -62,13 +62,13 @@
                                 <exclude reference="Kbv-Wt-00W"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="TUp-8y-aUc"/>
                                 <exclude reference="Jzq-vO-9Oq"/>
                                 <exclude reference="QRO-f3-9kr"/>
                                 <exclude reference="ihf-jJ-dUg"/>
                                 <exclude reference="2ar-Us-eHi"/>
                                 <exclude reference="5K2-fh-TUn"/>
                                 <exclude reference="F0e-BF-bZp"/>
-                                <exclude reference="TUp-8y-aUc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -77,13 +77,13 @@
                                 <include reference="Kbv-Wt-00W"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="TUp-8y-aUc"/>
                                 <include reference="Jzq-vO-9Oq"/>
                                 <include reference="QRO-f3-9kr"/>
                                 <include reference="ihf-jJ-dUg"/>
                                 <include reference="2ar-Us-eHi"/>
                                 <include reference="5K2-fh-TUn"/>
                                 <include reference="F0e-BF-bZp"/>
-                                <include reference="TUp-8y-aUc"/>
                             </mask>
                         </variation>
                     </view>

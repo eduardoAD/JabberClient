@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E48F2DA61A545CBD0084997C /* SMChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F2DA41A545CBD0084997C /* SMChatViewController.m */; };
+		E48F2DA71A545CBD0084997C /* SMChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48F2DA51A545CBD0084997C /* SMChatViewController.xib */; };
 		E4C786091A532B7800BC838F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C786081A532B7800BC838F /* main.m */; };
 		E4C7860C1A532B7800BC838F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7860B1A532B7800BC838F /* AppDelegate.m */; };
-		E4C7860F1A532B7800BC838F /* BuddyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7860E1A532B7800BC838F /* BuddyListViewController.m */; };
+		E4C7860F1A532B7800BC838F /* SMBuddyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */; };
 		E4C786121A532B7800BC838F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C786101A532B7800BC838F /* Main.storyboard */; };
 		E4C786141A532B7800BC838F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C786131A532B7800BC838F /* Images.xcassets */; };
 		E4C786171A532B7800BC838F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C786151A532B7800BC838F /* LaunchScreen.xib */; };
@@ -168,13 +170,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E48F2DA31A545CBD0084997C /* SMChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMChatViewController.h; sourceTree = "<group>"; };
+		E48F2DA41A545CBD0084997C /* SMChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMChatViewController.m; sourceTree = "<group>"; };
+		E48F2DA51A545CBD0084997C /* SMChatViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMChatViewController.xib; sourceTree = "<group>"; };
 		E4C786031A532B7800BC838F /* JabberClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JabberClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C786071A532B7800BC838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4C786081A532B7800BC838F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4C7860A1A532B7800BC838F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E4C7860B1A532B7800BC838F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		E4C7860D1A532B7800BC838F /* BuddyListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuddyListViewController.h; sourceTree = "<group>"; };
-		E4C7860E1A532B7800BC838F /* BuddyListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BuddyListViewController.m; sourceTree = "<group>"; };
+		E4C7860D1A532B7800BC838F /* SMBuddyListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMBuddyListViewController.h; sourceTree = "<group>"; };
+		E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMBuddyListViewController.m; sourceTree = "<group>"; };
 		E4C786111A532B7800BC838F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E4C786131A532B7800BC838F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E4C786161A532B7800BC838F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -545,8 +550,11 @@
 				E4C787581A53520000BC838F /* Vendor */,
 				E4C7860A1A532B7800BC838F /* AppDelegate.h */,
 				E4C7860B1A532B7800BC838F /* AppDelegate.m */,
-				E4C7860D1A532B7800BC838F /* BuddyListViewController.h */,
-				E4C7860E1A532B7800BC838F /* BuddyListViewController.m */,
+				E4C7860D1A532B7800BC838F /* SMBuddyListViewController.h */,
+				E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */,
+				E48F2DA31A545CBD0084997C /* SMChatViewController.h */,
+				E48F2DA41A545CBD0084997C /* SMChatViewController.m */,
+				E48F2DA51A545CBD0084997C /* SMChatViewController.xib */,
 				E4C786101A532B7800BC838F /* Main.storyboard */,
 				E4C7883E1A536AFC00BC838F /* SMLoginViewController.h */,
 				E4C7883F1A536AFC00BC838F /* SMLoginViewController.m */,
@@ -1509,6 +1517,7 @@
 				E4C788421A536AFC00BC838F /* SMLoginViewController.xib in Resources */,
 				E4C786171A532B7800BC838F /* LaunchScreen.xib in Resources */,
 				E4C788011A53520000BC838F /* README.txt in Resources */,
+				E48F2DA71A545CBD0084997C /* SMChatViewController.xib in Resources */,
 				E4C786141A532B7800BC838F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1551,6 +1560,7 @@
 				E4C787C01A53520000BC838F /* XMPPvCardTempModule.m in Sources */,
 				E4C7883A1A53539F00BC838F /* XMPPSCRAMSHA1Authentication.m in Sources */,
 				E4C787B91A53520000BC838F /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
+				E48F2DA61A545CBD0084997C /* SMChatViewController.m in Sources */,
 				E4C787E51A53520000BC838F /* XMPPAutoTime.m in Sources */,
 				E4C7878A1A53520000BC838F /* XMPPMessage.m in Sources */,
 				E4C787BB1A53520000BC838F /* XMPPvCardTempAdr.m in Sources */,
@@ -1592,7 +1602,7 @@
 				E4C787F71A53520000BC838F /* XMPPTimer.m in Sources */,
 				E4C787861A53520000BC838F /* XMPPConstants.m in Sources */,
 				E4C787BA1A53520000BC838F /* XMPPvCardTemp.m in Sources */,
-				E4C7860F1A532B7800BC838F /* BuddyListViewController.m in Sources */,
+				E4C7860F1A532B7800BC838F /* SMBuddyListViewController.m in Sources */,
 				E4C787991A53520000BC838F /* XMPPRoster.xcdatamodel in Sources */,
 				E4C787C71A53520000BC838F /* XMPPIQ+XEP_0066.m in Sources */,
 				E4C787D91A53520000BC838F /* XMPPMessageArchiving.m in Sources */,

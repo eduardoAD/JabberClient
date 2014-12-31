@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Organization. All rights reserved.
 //
 
-#import "BuddyListViewController.h"
+#import "SMBuddyListViewController.h"
 #import <SMLoginViewController.h>
 
-@interface BuddyListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SMBuddyListViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation BuddyListViewController
+@implementation SMBuddyListViewController
 
 @synthesize tView;
 @synthesize onlineBuddies;
