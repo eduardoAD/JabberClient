@@ -18,7 +18,7 @@
 
 @implementation JabberClientAppDelegate
 
-@synthesize xmppStream, window, viewController, password, open;
+@synthesize xmppStream, window, viewController, password, open, _chatDelegate, _messageDelegate;
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     [self disconnect];
@@ -77,6 +77,52 @@
 - (void)disconnect{
     [self goOffline];
     [xmppStream disconnect];
+}
+
+#pragma mark - XMPP delegates
+
+- (void)xmppStreamDidConnect:(XMPPStream *)sender {
+    // connection to the server successful
+    open = YES;
+    NSError *error = nil;
+    [[self xmppStream] authenticateWithPassword:password error:&error];
+}
+
+- (void)xmppStreamDidAuthenticate:(XMPPStream *)sender {
+    // authentication successful
+    [self goOnline];
+}
+
+
+- (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message {
+    // message received
+    NSString *msg = [[message elementForName:@"body"] stringValue];
+    NSString *from = [[message attributeForName:@"from"] stringValue];
+
+    NSMutableDictionary *m = [[NSMutableDictionary alloc] init];
+    [m setObject:msg forKey:@"msg"];
+    [m setObject:from forKey:@"sender"];
+
+    [_messageDelegate newMessageReceived:m];
+}
+
+- (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence {
+    // a buddy went offline/online
+    NSString *presenceType = [presence type];   // online/offline
+    NSString *myUsername = [[sender myJID] user];
+    NSString *presenceFromUser = [[presence from] user];
+
+    if (![presenceFromUser isEqualToString:myUsername]) {
+
+        if ([presenceType isEqualToString:@"available"]) {
+
+            [_chatDelegate newBuddyOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"jerry.local"]];
+
+        } else if ([presenceType isEqualToString:@"unavailable"]) {
+
+            [_chatDelegate buddyWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"jerry.local"]];
+        }
+    }
 }
 
 @end

@@ -19,6 +19,9 @@
 @property (nonatomic, retain) NSString *password;
 @property (nonatomic, getter=isOpen) BOOL open;
 
+@property (nonatomic, assign) id _chatDelegate;
+@property (nonatomic, assign) id _messageDelegate;
+
 - (BOOL)connect;
 - (void)disconnect;
 
