@@ -167,6 +167,7 @@
 		E4C7883C1A53539F00BC838F /* XMPPXOAuth2Google.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C788321A53539F00BC838F /* XMPPXOAuth2Google.m */; };
 		E4C788411A536AFC00BC838F /* SMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7883F1A536AFC00BC838F /* SMLoginViewController.m */; };
 		E4C788421A536AFC00BC838F /* SMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C788401A536AFC00BC838F /* SMLoginViewController.xib */; };
+		E4E280F41A575FEB00D01DA9 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E280F31A575FEB00D01DA9 /* NSString+Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -492,6 +493,8 @@
 		E4C7883E1A536AFC00BC838F /* SMLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMLoginViewController.h; sourceTree = "<group>"; };
 		E4C7883F1A536AFC00BC838F /* SMLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMLoginViewController.m; sourceTree = "<group>"; };
 		E4C788401A536AFC00BC838F /* SMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMLoginViewController.xib; sourceTree = "<group>"; };
+		E4E280F21A575FEB00D01DA9 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
+		E4E280F31A575FEB00D01DA9 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -552,6 +555,8 @@
 				E4C787581A53520000BC838F /* Vendor */,
 				E4C7860D1A532B7800BC838F /* SMBuddyListViewController.h */,
 				E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */,
+				E4E280F21A575FEB00D01DA9 /* NSString+Utils.h */,
+				E4E280F31A575FEB00D01DA9 /* NSString+Utils.m */,
 				E48F2DA81A5477430084997C /* JabberClientAppDelegate.h */,
 				E48F2DA91A5477430084997C /* JabberClientAppDelegate.m */,
 				E48F2DAB1A5485870084997C /* SMChatDelegate.h */,
@@ -1564,6 +1569,7 @@
 				E4C787C01A53520000BC838F /* XMPPvCardTempModule.m in Sources */,
 				E4C7883A1A53539F00BC838F /* XMPPSCRAMSHA1Authentication.m in Sources */,
 				E4C787B91A53520000BC838F /* XMPPvCardTempCoreDataStorageObject.m in Sources */,
+				E4E280F41A575FEB00D01DA9 /* NSString+Utils.m in Sources */,
 				E48F2DA61A545CBD0084997C /* SMChatViewController.m in Sources */,
 				E4C787E51A53520000BC838F /* XMPPAutoTime.m in Sources */,
 				E4C7878A1A53520000BC838F /* XMPPMessage.m in Sources */,

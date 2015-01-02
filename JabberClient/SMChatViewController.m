@@ -7,7 +7,6 @@
 //
 
 #import "SMChatViewController.h"
-#define TimeStamp [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000]
 
 @interface SMChatViewController ()
 
@@ -69,6 +68,7 @@
         NSMutableDictionary *m = [[NSMutableDictionary alloc]init];
         [m setObject:messageStr forKey:@"msg"];
         [m setObject:@"you" forKey:@"sender"];
+        [m setObject:[NSString getCurrentTime] forKey:@"time"];
 
         [self.messages addObject:m];
         [self.tView reloadData];
@@ -114,7 +114,7 @@
     NSString *m = [messageContent objectForKey:@"msg"];
 
     [messageContent setValue:m forKey:@"msg"];
-    [messageContent setValue:TimeStamp forKey:@"time"];
+    [messageContent setValue:[NSString getCurrentTime] forKey:@"time"];
     [self.messages addObject:messageContent];
     [self.tView reloadData];
 }

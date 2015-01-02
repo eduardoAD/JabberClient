@@ -10,6 +10,8 @@
 #import "SMMessageDelegate.h"
 #import "JabberClientAppDelegate.h"
 #import "XMPP.h"
+#import "NSString+Utils.h"
+
 
 @interface SMChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SMMessageDelegate>
 
