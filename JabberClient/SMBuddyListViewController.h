@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SMLoginViewController.h"
+#import "SMChatViewController.h"
+#import "SMChatDelegate.h"
+#import "JabberClientAppDelegate.h"
 
-@interface SMBuddyListViewController : UIViewController
+@interface SMBuddyListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SMChatDelegate>
 
 @property (nonatomic, retain) IBOutlet UITableView *tView;
 @property NSMutableArray *onlineBuddies;

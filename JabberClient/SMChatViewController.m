@@ -7,8 +7,9 @@
 //
 
 #import "SMChatViewController.h"
+#define TimeStamp [NSString stringWithFormat:@"%f",[[NSDate date] timeIntervalSince1970] * 1000]
 
-@interface SMChatViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SMChatViewController ()
 
 @end
 
@@ -16,9 +17,27 @@
 
 @synthesize messageField, chatWithUser, tView;
 
+- (JabberClientAppDelegate *)appDelegate{
+    return (JabberClientAppDelegate *)[[UIApplication sharedApplication]delegate];
+}
+
+- (XMPPStream *)xmppStream{
+    return [[self appDelegate]xmppStream];
+}
+
+- (id) initWithUser:(NSString *)userName{
+    if (self = [super init]) {
+        chatWithUser = userName;
+        self.navItem.title = userName;
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.messages = [[NSMutableArray alloc]init];
+    JabberClientAppDelegate *del = [self appDelegate];
+    del._messageDelegate = self;
 
     [self.messageField becomeFirstResponder];
 }
@@ -34,8 +53,19 @@
 
     if ([messageStr length] > 0) {
         //send message through XMPP
-        self.messageField.text = @"";
 
+        NSXMLElement *body = [NSXMLElement elementWithName:@"body"];
+        [body setStringValue:messageStr];
+
+        NSXMLElement *message = [NSXMLElement elementWithName:@"message"];
+        [message addAttributeWithName:@"type" stringValue:@"chat"];
+        [message addAttributeWithName:@"to" stringValue:chatWithUser];
+        [message addChild:body];
+
+        [self.xmppStream sendElement:message];
+
+        self.messageField.text = @"";
+        
         NSMutableDictionary *m = [[NSMutableDictionary alloc]init];
         [m setObject:messageStr forKey:@"msg"];
         [m setObject:@"you" forKey:@"sender"];
@@ -80,5 +110,13 @@
 
 #pragma mark - Chat delegates
 
+- (void) newMessageReceived:(NSDictionary *)messageContent{
+    NSString *m = [messageContent objectForKey:@"msg"];
+
+    [messageContent setValue:m forKey:@"msg"];
+    [messageContent setValue:TimeStamp forKey:@"time"];
+    [self.messages addObject:messageContent];
+    [self.tView reloadData];
+}
 
 @end

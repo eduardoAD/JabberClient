@@ -63,7 +63,7 @@
     NSError *error = nil;
     if (![xmppStream connectWithTimeout:1000 error:&error]) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error"
-                                                            message:[NSString stringWithFormat:@"Can't connect to server %@", [error localizedDescription]]
+                                                            message:[NSString stringWithFormat:@"Can't connect to server: %@", [error localizedDescription]]
                                                            delegate:nil
                                                   cancelButtonTitle:@"Ok"
                                                   otherButtonTitles:nil];
@@ -116,11 +116,11 @@
 
         if ([presenceType isEqualToString:@"available"]) {
 
-            [_chatDelegate newBuddyOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"jerry.local"]];
+            [_chatDelegate newBuddyOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"eduardos-macbook-pro-2.local.local"]];
 
         } else if ([presenceType isEqualToString:@"unavailable"]) {
 
-            [_chatDelegate buddyWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"jerry.local"]];
+            [_chatDelegate buddyWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"eduardos-macbook-pro-2.local.local"]];
         }
     }
 }

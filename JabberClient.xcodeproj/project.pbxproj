@@ -11,7 +11,6 @@
 		E48F2DA71A545CBD0084997C /* SMChatViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E48F2DA51A545CBD0084997C /* SMChatViewController.xib */; };
 		E48F2DAA1A5477430084997C /* JabberClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F2DA91A5477430084997C /* JabberClientAppDelegate.m */; };
 		E4C786091A532B7800BC838F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C786081A532B7800BC838F /* main.m */; };
-		E4C7860C1A532B7800BC838F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7860B1A532B7800BC838F /* AppDelegate.m */; };
 		E4C7860F1A532B7800BC838F /* SMBuddyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */; };
 		E4C786121A532B7800BC838F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4C786101A532B7800BC838F /* Main.storyboard */; };
 		E4C786141A532B7800BC838F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E4C786131A532B7800BC838F /* Images.xcassets */; };
@@ -181,8 +180,6 @@
 		E4C786031A532B7800BC838F /* JabberClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JabberClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4C786071A532B7800BC838F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E4C786081A532B7800BC838F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		E4C7860A1A532B7800BC838F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		E4C7860B1A532B7800BC838F /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		E4C7860D1A532B7800BC838F /* SMBuddyListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMBuddyListViewController.h; sourceTree = "<group>"; };
 		E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMBuddyListViewController.m; sourceTree = "<group>"; };
 		E4C786111A532B7800BC838F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -553,8 +550,6 @@
 				E4C7864B1A53520000BC838F /* Extensions */,
 				E4C787491A53520000BC838F /* Utilities */,
 				E4C787581A53520000BC838F /* Vendor */,
-				E4C7860A1A532B7800BC838F /* AppDelegate.h */,
-				E4C7860B1A532B7800BC838F /* AppDelegate.m */,
 				E4C7860D1A532B7800BC838F /* SMBuddyListViewController.h */,
 				E4C7860E1A532B7800BC838F /* SMBuddyListViewController.m */,
 				E48F2DA81A5477430084997C /* JabberClientAppDelegate.h */,
@@ -1626,7 +1621,6 @@
 				E4C7878B1A53520000BC838F /* XMPPModule.m in Sources */,
 				E4C787FD1A53520000BC838F /* DDTTYLogger.m in Sources */,
 				E4C788351A53539F00BC838F /* XMPPAnonymousAuthentication.m in Sources */,
-				E4C7860C1A532B7800BC838F /* AppDelegate.m in Sources */,
 				E4C788041A53520000BC838F /* DDXMLElement.m in Sources */,
 				E4C787D21A53520000BC838F /* XMPPCapsCoreDataStorageObject.m in Sources */,
 				E4C787C21A53520000BC838F /* NSXMLElement+XEP_0059.m in Sources */,

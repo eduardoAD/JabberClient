@@ -8,6 +8,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SMChatViewController">
             <connections>
                 <outlet property="messageField" destination="PGL-va-uK4" id="KiW-Y6-tgV"/>
+                <outlet property="navItem" destination="2Vz-CJ-cmq" id="cr8-71-xky"/>
                 <outlet property="tView" destination="wOt-dH-MZg" id="sDq-wi-A0k"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -17,18 +18,6 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pd-yx-yak">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                    <items>
-                        <navigationItem title="Title" id="2Vz-CJ-cmq">
-                            <barButtonItem key="leftBarButtonItem" title="Close" id="eAJ-qU-JvG">
-                                <connections>
-                                    <action selector="closeChat" destination="-1" id="b8p-pJ-ozH"/>
-                                </connections>
-                            </barButtonItem>
-                        </navigationItem>
-                    </items>
-                </navigationBar>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGL-va-uK4">
                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -51,6 +40,18 @@
                         <outlet property="delegate" destination="-1" id="0J1-ym-E0r"/>
                     </connections>
                 </tableView>
+                <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pd-yx-yak">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <items>
+                        <navigationItem title="Title" id="2Vz-CJ-cmq">
+                            <barButtonItem key="leftBarButtonItem" title="Close" id="eAJ-qU-JvG">
+                                <connections>
+                                    <action selector="closeChat" destination="-1" id="b8p-pJ-ozH"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -79,50 +80,50 @@
             </constraints>
             <variation key="default">
                 <mask key="subviews">
-                    <exclude reference="0pd-yx-yak"/>
                     <exclude reference="PGL-va-uK4"/>
                     <exclude reference="8oX-x4-idX"/>
                     <exclude reference="wOt-dH-MZg"/>
+                    <exclude reference="0pd-yx-yak"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="MUC-vN-6mY"/>
+                    <exclude reference="N0f-DR-fHO"/>
+                    <exclude reference="HhN-ez-MGK"/>
+                    <exclude reference="M2A-xw-D66"/>
+                    <exclude reference="hBM-Th-8Kc"/>
                     <exclude reference="5Hj-8X-pfs"/>
                     <exclude reference="8yK-qb-hXe"/>
                     <exclude reference="JzF-mP-d8z"/>
                     <exclude reference="dXZ-92-xBH"/>
                     <exclude reference="flh-JK-1Dj"/>
-                    <exclude reference="MUC-vN-6mY"/>
-                    <exclude reference="N0f-DR-fHO"/>
                     <exclude reference="VIN-e6-Dks"/>
                     <exclude reference="aWn-tr-Kb3"/>
                     <exclude reference="vGq-o8-fvu"/>
                     <exclude reference="zd9-T7-IgJ"/>
-                    <exclude reference="HhN-ez-MGK"/>
-                    <exclude reference="M2A-xw-D66"/>
-                    <exclude reference="hBM-Th-8Kc"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
                 <mask key="subviews">
-                    <include reference="0pd-yx-yak"/>
                     <include reference="PGL-va-uK4"/>
                     <include reference="8oX-x4-idX"/>
                     <include reference="wOt-dH-MZg"/>
+                    <include reference="0pd-yx-yak"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="MUC-vN-6mY"/>
+                    <include reference="N0f-DR-fHO"/>
+                    <include reference="HhN-ez-MGK"/>
+                    <include reference="M2A-xw-D66"/>
+                    <include reference="hBM-Th-8Kc"/>
                     <include reference="5Hj-8X-pfs"/>
                     <include reference="8yK-qb-hXe"/>
                     <include reference="JzF-mP-d8z"/>
                     <include reference="dXZ-92-xBH"/>
                     <include reference="flh-JK-1Dj"/>
-                    <include reference="MUC-vN-6mY"/>
-                    <include reference="N0f-DR-fHO"/>
                     <include reference="VIN-e6-Dks"/>
                     <include reference="aWn-tr-Kb3"/>
                     <include reference="vGq-o8-fvu"/>
                     <include reference="zd9-T7-IgJ"/>
-                    <include reference="HhN-ez-MGK"/>
-                    <include reference="M2A-xw-D66"/>
-                    <include reference="hBM-Th-8Kc"/>
                 </mask>
             </variation>
         </view>

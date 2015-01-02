@@ -7,9 +7,8 @@
 //
 
 #import "SMBuddyListViewController.h"
-#import <SMLoginViewController.h>
 
-@interface SMBuddyListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SMBuddyListViewController ()
 
 @end
 
@@ -18,15 +17,29 @@
 @synthesize tView;
 @synthesize onlineBuddies;
 
+- (JabberClientAppDelegate *)appDelegate{
+    return (JabberClientAppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
+- (XMPPStream *)xmppStream{
+    return [[self appDelegate] xmppStream];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     onlineBuddies = [[NSMutableArray alloc] init];
+    JabberClientAppDelegate *del = [self appDelegate];
+    del._chatDelegate = self;
 }
 
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NSString *login = [[NSUserDefaults standardUserDefaults] objectForKey:@"userID"];
-    if (!login) {
+    if (login) {
+        if ([[self appDelegate] connect]) {
+            NSLog(@"Show buddy list");
+        }
+    }else{
         [self showLogin];
     }
 }
@@ -64,9 +77,29 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
     // start a chat
+    NSString *userName = (NSString *)[onlineBuddies objectAtIndex:indexPath.row];
+    SMChatViewController *chatController = [[SMChatViewController alloc] initWithUser:userName];
+    [self presentViewController:chatController animated:YES completion:^{}];
+}
 
+#pragma mark - Chat delegate
+
+- (void) newBuddyOnline:(NSString *)buddyName{
+    if (![onlineBuddies containsObject:buddyName]) {
+        [onlineBuddies addObject:buddyName];
+        [self.tView reloadData];
+    }
+}
+
+- (void) buddyWentOffline:(NSString *)buddyName{
+    [onlineBuddies removeObject:buddyName];
+    [self.tView reloadData];
+}
+
+- (void)didDisconnect{
+    [onlineBuddies removeAllObjects];
+    [self.tView reloadData];
 }
 
 @end

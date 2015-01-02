@@ -6,12 +6,14 @@
 //  Copyright (c) 2014 Organization. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "XMPP.h"
+#import "SMChatDelegate.h"
+#import "SMMessageDelegate.h"
 
 @class SMBuddyListViewController;
 
-@interface JabberClientAppDelegate : NSObject
+@interface JabberClientAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet SMBuddyListViewController *viewController;
