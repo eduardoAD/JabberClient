@@ -15,6 +15,7 @@
 @implementation SMChatViewController 
 
 @synthesize messageField, chatWithUser, tView;
+static CGFloat padding = 20.0;
 
 - (JabberClientAppDelegate *)appDelegate{
     return (JabberClientAppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -66,7 +67,7 @@
         self.messageField.text = @"";
         
         NSMutableDictionary *m = [[NSMutableDictionary alloc]init];
-        [m setObject:messageStr forKey:@"msg"];
+        [m setObject:[messageStr substituteEmoticons] forKey:@"msg"];
         [m setObject:@"you" forKey:@"sender"];
         [m setObject:[NSString getCurrentTime] forKey:@"time"];
 
@@ -81,16 +82,45 @@
 
     NSDictionary *s = (NSDictionary *) [self.messages objectAtIndex:indexPath.row];
     static NSString *CellIdentifier = @"MessageCellIdentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    SMMessageViewTableCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+        cell = [[SMMessageViewTableCell alloc] initWithFrame:CGRectZero reuseIdentifier:CellIdentifier];
     }
 
-    cell.textLabel.text = [s objectForKey:@"msg"];
-    cell.detailTextLabel.text = [s objectForKey:@"sender"];
+    NSString *sender = [s objectForKey:@"sender"];
+    NSString *message = [s objectForKey:@"msg"];
+    NSString *time = [s objectForKey:@"time"];
+    CGSize textSize = { 260.0, 10000.0 };
+    CGSize size = [message sizeWithFont:[UIFont boldSystemFontOfSize:13]
+                      constrainedToSize:textSize
+                          lineBreakMode:NSLineBreakByWordWrapping];
+    //size.width += (padding/2);
+    cell.messageContentView.text = message;
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.userInteractionEnabled = NO;
+
+    UIImage *bgImage = nil;
+    if ([sender isEqualToString:@"you"]) { // left aligned
+        bgImage = [[UIImage imageNamed:@"orange.png"] stretchableImageWithLeftCapWidth:24 topCapHeight:15];
+        [cell.messageContentView setFrame:CGRectMake(padding, padding*2, size.width, size.height)];
+        [cell.bgImageView setFrame:CGRectMake( cell.messageContentView.frame.origin.x - padding/2,
+                                              cell.messageContentView.frame.origin.y - padding/2,
+                                              size.width+padding,
+                                              size.height+padding)];
+    } else {
+        bgImage = [[UIImage imageNamed:@"aqua.png"] stretchableImageWithLeftCapWidth:24 topCapHeight:15];
+        [cell.messageContentView setFrame:CGRectMake(320 - size.width - padding,
+                                                     padding*2,
+                                                     size.width,
+                                                     size.height)];
+        [cell.bgImageView setFrame:CGRectMake(cell.messageContentView.frame.origin.x - padding/2,
+                                              cell.messageContentView.frame.origin.y - padding/2,
+                                              size.width+padding,
+                                              size.height+padding)];
+    }
+    cell.bgImageView.image = bgImage;
+    cell.senderAndTimeLabel.text = [NSString stringWithFormat:@"%@ %@", sender, time];
 
     return cell;
 
@@ -113,7 +143,7 @@
 - (void) newMessageReceived:(NSDictionary *)messageContent{
     NSString *m = [messageContent objectForKey:@"msg"];
 
-    [messageContent setValue:m forKey:@"msg"];
+    [messageContent setValue:[m substituteEmoticons] forKey:@"msg"];
     [messageContent setValue:[NSString getCurrentTime] forKey:@"time"];
     [self.messages addObject:messageContent];
     [self.tView reloadData];

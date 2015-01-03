@@ -11,5 +11,6 @@
 @interface NSString (Utils)
 
 + (NSString *)getCurrentTime;
+- (NSString *) substituteEmoticons;
 
 @end

@@ -168,6 +168,7 @@
 		E4C788411A536AFC00BC838F /* SMLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4C7883F1A536AFC00BC838F /* SMLoginViewController.m */; };
 		E4C788421A536AFC00BC838F /* SMLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E4C788401A536AFC00BC838F /* SMLoginViewController.xib */; };
 		E4E280F41A575FEB00D01DA9 /* NSString+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E280F31A575FEB00D01DA9 /* NSString+Utils.m */; };
+		E4E280F71A57624E00D01DA9 /* SMMessageViewTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E280F61A57624E00D01DA9 /* SMMessageViewTableCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -495,6 +496,8 @@
 		E4C788401A536AFC00BC838F /* SMLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SMLoginViewController.xib; sourceTree = "<group>"; };
 		E4E280F21A575FEB00D01DA9 /* NSString+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Utils.h"; sourceTree = "<group>"; };
 		E4E280F31A575FEB00D01DA9 /* NSString+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Utils.m"; sourceTree = "<group>"; };
+		E4E280F51A57624E00D01DA9 /* SMMessageViewTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMMessageViewTableCell.h; sourceTree = "<group>"; };
+		E4E280F61A57624E00D01DA9 /* SMMessageViewTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMMessageViewTableCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -563,6 +566,8 @@
 				E48F2DAC1A5485EE0084997C /* SMMessageDelegate.h */,
 				E48F2DA31A545CBD0084997C /* SMChatViewController.h */,
 				E48F2DA41A545CBD0084997C /* SMChatViewController.m */,
+				E4E280F51A57624E00D01DA9 /* SMMessageViewTableCell.h */,
+				E4E280F61A57624E00D01DA9 /* SMMessageViewTableCell.m */,
 				E48F2DA51A545CBD0084997C /* SMChatViewController.xib */,
 				E4C786101A532B7800BC838F /* Main.storyboard */,
 				E4C7883E1A536AFC00BC838F /* SMLoginViewController.h */,
@@ -1551,6 +1556,7 @@
 				E4C787D71A53520000BC838F /* XMPPMessageArchiving_Message_CoreDataObject.m in Sources */,
 				E4C787FE1A53520000BC838F /* DDContextFilterLogFormatter.m in Sources */,
 				E4C787EC1A53520000BC838F /* XMPPMessageCarbons.m in Sources */,
+				E4E280F71A57624E00D01DA9 /* SMMessageViewTableCell.m in Sources */,
 				E4C787A51A53520000BC838F /* XMPPLastActivity.m in Sources */,
 				E4C7878D1A53520000BC838F /* XMPPPresence.m in Sources */,
 				E4C787841A53520000BC838F /* NSNumber+XMPP.m in Sources */,
