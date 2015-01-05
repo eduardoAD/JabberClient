@@ -10,8 +10,8 @@
 
 @interface SMMessageViewTableCell : UITableViewCell
 
-@property (nonatomic, assign) UILabel *senderAndTimeLabel;
-@property (nonatomic, assign) UITextView *messageContentView;
-@property (nonatomic, assign) UIImageView *bgImageView;
+@property (nonatomic, strong) UILabel *senderAndTimeLabel;
+@property (nonatomic, strong) UITextView *messageContentView;
+@property (nonatomic, strong) UIImageView *bgImageView;
 
 @end

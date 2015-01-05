@@ -28,6 +28,7 @@
         messageContentView.editable = NO;
         messageContentView.scrollEnabled = NO;
         [messageContentView sizeToFit];
+        [messageContentView setTextContainerInset:UIEdgeInsetsMake(0, 0, 0, 0)];
         [self.contentView addSubview:messageContentView];
     }
     return  self;

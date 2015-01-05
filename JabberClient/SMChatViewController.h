@@ -13,13 +13,13 @@
 #import "NSString+Utils.h"
 #import "SMMessageViewTableCell.h"
 
-@interface SMChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SMMessageDelegate>
+@interface SMChatViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SMMessageDelegate, UITextFieldDelegate>
 
 @property (nonatomic, retain) IBOutlet UITextField *messageField;
 @property (nonatomic, retain) NSString *chatWithUser;
 @property (nonatomic, retain) IBOutlet UITableView *tView;
 @property (nonatomic, retain) NSMutableArray  *messages;
-@property (strong, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
 
 - (id) initWithUser:(NSString *) userName;
 - (IBAction)sendMessage;

@@ -15,7 +15,7 @@
 @implementation SMChatViewController 
 
 @synthesize messageField, chatWithUser, tView;
-static CGFloat padding = 20.0;
+static CGFloat padding = 15.0;
 
 - (JabberClientAppDelegate *)appDelegate{
     return (JabberClientAppDelegate *)[[UIApplication sharedApplication]delegate];
@@ -28,7 +28,6 @@ static CGFloat padding = 20.0;
 - (id) initWithUser:(NSString *)userName{
     if (self = [super init]) {
         chatWithUser = userName;
-        self.navItem.title = userName;
     }
     return self;
 }
@@ -40,6 +39,10 @@ static CGFloat padding = 20.0;
     del._messageDelegate = self;
 
     [self.messageField becomeFirstResponder];
+
+    NSArray *userField = [chatWithUser componentsSeparatedByString:@"@"];
+    self.navBar.topItem.title = [NSString stringWithFormat:@"Chat with %@",userField[0]];
+    NSLog(@"%@",self.navBar.topItem.title);
 }
 
 #pragma mark - Actions
@@ -95,7 +98,7 @@ static CGFloat padding = 20.0;
     CGSize size = [message sizeWithFont:[UIFont boldSystemFontOfSize:13]
                       constrainedToSize:textSize
                           lineBreakMode:NSLineBreakByWordWrapping];
-    //size.width += (padding/2);
+    size.width += (padding/2);
     cell.messageContentView.text = message;
     cell.accessoryType = UITableViewCellAccessoryNone;
     cell.userInteractionEnabled = NO;
@@ -147,6 +150,18 @@ static CGFloat padding = 20.0;
     [messageContent setValue:[NSString getCurrentTime] forKey:@"time"];
     [self.messages addObject:messageContent];
     [self.tView reloadData];
+}
+
+#pragma mark - TextView
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if ([messageField.text isEqualToString:@""]) {
+        return NO;
+    }else{
+        [self sendMessage];
+//        [textField resignFirstResponder];
+        return YES;
+    }
 }
 
 @end

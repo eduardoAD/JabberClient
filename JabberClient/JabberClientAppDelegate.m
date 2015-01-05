@@ -111,16 +111,17 @@
     NSString *presenceType = [presence type];   // online/offline
     NSString *myUsername = [[sender myJID] user];
     NSString *presenceFromUser = [[presence from] user];
+    NSString *presenceFromDomain = [[presence from] domain];
 
     if (![presenceFromUser isEqualToString:myUsername]) {
 
         if ([presenceType isEqualToString:@"available"]) {
 
-            [_chatDelegate newBuddyOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"eduardos-macbook-pro-2.local.local"]];
+            [_chatDelegate newBuddyOnline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, presenceFromDomain]];
 
         } else if ([presenceType isEqualToString:@"unavailable"]) {
 
-            [_chatDelegate buddyWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, @"eduardos-macbook-pro-2.local.local"]];
+            [_chatDelegate buddyWentOffline:[NSString stringWithFormat:@"%@@%@", presenceFromUser, presenceFromDomain]];
         }
     }
 }
