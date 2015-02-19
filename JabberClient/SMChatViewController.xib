@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -85,18 +85,18 @@
                     <exclude reference="wOt-dH-MZg"/>
                 </mask>
                 <mask key="constraints">
+                    <exclude reference="MUC-vN-6mY"/>
+                    <exclude reference="N0f-DR-fHO"/>
+                    <exclude reference="HhN-ez-MGK"/>
+                    <exclude reference="M2A-xw-D66"/>
+                    <exclude reference="hBM-Th-8Kc"/>
                     <exclude reference="5Hj-8X-pfs"/>
                     <exclude reference="JzF-mP-d8z"/>
                     <exclude reference="flh-JK-1Dj"/>
-                    <exclude reference="MUC-vN-6mY"/>
-                    <exclude reference="N0f-DR-fHO"/>
                     <exclude reference="ajn-ae-YpD"/>
                     <exclude reference="mbQ-cr-kAv"/>
                     <exclude reference="pNk-wK-DzQ"/>
                     <exclude reference="x97-MO-ZUf"/>
-                    <exclude reference="HhN-ez-MGK"/>
-                    <exclude reference="M2A-xw-D66"/>
-                    <exclude reference="hBM-Th-8Kc"/>
                 </mask>
             </variation>
             <variation key="widthClass=compact">
@@ -107,18 +107,18 @@
                     <include reference="wOt-dH-MZg"/>
                 </mask>
                 <mask key="constraints">
+                    <include reference="MUC-vN-6mY"/>
+                    <include reference="N0f-DR-fHO"/>
+                    <include reference="HhN-ez-MGK"/>
+                    <include reference="M2A-xw-D66"/>
+                    <include reference="hBM-Th-8Kc"/>
                     <include reference="5Hj-8X-pfs"/>
                     <include reference="JzF-mP-d8z"/>
                     <include reference="flh-JK-1Dj"/>
-                    <include reference="MUC-vN-6mY"/>
-                    <include reference="N0f-DR-fHO"/>
                     <include reference="ajn-ae-YpD"/>
                     <include reference="mbQ-cr-kAv"/>
                     <include reference="pNk-wK-DzQ"/>
                     <include reference="x97-MO-ZUf"/>
-                    <include reference="HhN-ez-MGK"/>
-                    <include reference="M2A-xw-D66"/>
-                    <include reference="hBM-Th-8Kc"/>
                 </mask>
             </variation>
         </view>

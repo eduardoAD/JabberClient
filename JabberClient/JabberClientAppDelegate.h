@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "XMPPRoster.h"
 #import "XMPP.h"
 #import "SMChatDelegate.h"
 #import "SMMessageDelegate.h"
@@ -18,8 +19,9 @@
 @property (nonatomic, retain) IBOutlet UIWindow *window;
 @property (nonatomic, retain) IBOutlet SMBuddyListViewController *viewController;
 @property (nonatomic, readonly) XMPPStream *xmppStream;
+@property (nonatomic, readonly) XMPPRoster *xmppRoster;
 @property (nonatomic, retain) NSString *password;
-@property (nonatomic, getter=isOpen) BOOL open;
+@property (nonatomic, getter=isOpen) BOOL isOpen;
 
 @property (nonatomic, assign) id _chatDelegate;
 @property (nonatomic, assign) id _messageDelegate;

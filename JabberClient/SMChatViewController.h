@@ -10,6 +10,7 @@
 #import "SMMessageDelegate.h"
 #import "JabberClientAppDelegate.h"
 #import "XMPP.h"
+#import "TURNSocket.h"
 #import "NSString+Utils.h"
 #import "SMMessageViewTableCell.h"
 
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *tView;
 @property (nonatomic, retain) NSMutableArray  *messages;
 @property (strong, nonatomic) IBOutlet UINavigationBar *navBar;
+@property (nonatomic, retain) NSMutableArray *turnSockets;
 
 - (id) initWithUser:(NSString *) userName;
 - (IBAction)sendMessage;

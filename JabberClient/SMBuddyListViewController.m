@@ -7,6 +7,8 @@
 //
 
 #import "SMBuddyListViewController.h"
+#import "XMPP.h"
+#import "XMPPRoster.h"
 
 @interface SMBuddyListViewController ()
 
@@ -14,8 +16,7 @@
 
 @implementation SMBuddyListViewController
 
-@synthesize tView;
-@synthesize onlineBuddies;
+@synthesize tView, onlineBuddies, buddyField;
 
 - (JabberClientAppDelegate *)appDelegate{
     return (JabberClientAppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -23,6 +24,10 @@
 
 - (XMPPStream *)xmppStream{
     return [[self appDelegate] xmppStream];
+}
+
+- (XMPPRoster *)xmppRoster{
+    return [[self appDelegate] xmppRoster];
 }
 
 - (void)viewDidLoad {
@@ -100,6 +105,11 @@
 - (void)didDisconnect{
     [onlineBuddies removeAllObjects];
     [self.tView reloadData];
+}
+
+- (IBAction) addBuddy {
+    // XMPPJID *newBuddy = [XMPPJID jidWithString:self.buddyField.text];
+    // [self.xmppRoster addBuddy:newBuddy withNickname:@"ciao"];
 }
 
 @end

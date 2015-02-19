@@ -14,7 +14,7 @@
 
 @implementation SMChatViewController 
 
-@synthesize messageField, chatWithUser, tView;
+@synthesize messageField, chatWithUser, tView, turnSockets;
 static CGFloat padding = 15.0;
 
 - (JabberClientAppDelegate *)appDelegate{
@@ -28,6 +28,7 @@ static CGFloat padding = 15.0;
 - (id) initWithUser:(NSString *)userName{
     if (self = [super init]) {
         chatWithUser = userName;
+        turnSockets = [[NSMutableArray alloc]init];
     }
     return self;
 }
@@ -37,12 +38,31 @@ static CGFloat padding = 15.0;
     self.messages = [[NSMutableArray alloc]init];
     JabberClientAppDelegate *del = [self appDelegate];
     del._messageDelegate = self;
+    [self.tView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
 
     [self.messageField becomeFirstResponder];
 
     NSArray *userField = [chatWithUser componentsSeparatedByString:@"@"];
     self.navBar.topItem.title = [NSString stringWithFormat:@"Chat with %@",userField[0]];
     NSLog(@"%@",self.navBar.topItem.title);
+
+    XMPPJID *jid = [XMPPJID jidWithString:chatWithUser];
+    NSLog(@"Attemping TURN connection to %@", jid);
+    TURNSocket *turnSocket = [[TURNSocket alloc] initWithStream:[self xmppStream] toJID:jid];
+    [turnSockets addObject:turnSocket];
+    [turnSocket startWithDelegate:self delegateQueue:dispatch_get_main_queue()];
+}
+
+- (void)turnSocket:(TURNSocket *)sender didSucceed:(GCDAsyncSocket *)socket{
+    NSLog(@"TURN Connection succeeded!");
+    NSLog(@"You now have a socket that you can use to send/receive data to/from the other person.");
+
+    [turnSockets removeObject:sender];
+}
+
+- (void)turnSocketDidFail:(TURNSocket *)sender{
+    NSLog(@"TURN Connection failed!");
+    [turnSockets removeObject:sender];
 }
 
 #pragma mark - Actions
@@ -127,6 +147,19 @@ static CGFloat padding = 15.0;
 
     return cell;
 
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSDictionary *dict = (NSDictionary *)[self.messages objectAtIndex:indexPath.row];
+    NSString *msg = [dict objectForKey:@"msg"];
+
+    CGSize textSize = {260.0, 10000.0};
+    CGSize size = [msg sizeWithFont:[UIFont boldSystemFontOfSize:13]
+                                    constrainedToSize:textSize
+                                        lineBreakMode:NSLineBreakByWordWrapping];
+    size.height += padding*2;
+    CGFloat height =  size.height < 65 ? 65 : size.height;
+    return height;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {

@@ -7,17 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JabberClientAppDelegate.h"
 #import "SMLoginViewController.h"
 #import "SMChatViewController.h"
 #import "SMChatDelegate.h"
-#import "JabberClientAppDelegate.h"
+
 
 @interface SMBuddyListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, SMChatDelegate>
 
 @property (nonatomic, retain) IBOutlet UITableView *tView;
+@property (nonatomic, retain) IBOutlet UIView *addBuddyView;
+@property (nonatomic, retain) IBOutlet UITextField *buddyField;
+
 @property NSMutableArray *onlineBuddies;
 
 - (IBAction) showLogin;
+- (IBAction)addBuddy;
 
 @end
 

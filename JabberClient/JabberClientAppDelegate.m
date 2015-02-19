@@ -18,7 +18,7 @@
 
 @implementation JabberClientAppDelegate
 
-@synthesize xmppStream, window, viewController, password, open, _chatDelegate, _messageDelegate;
+@synthesize xmppStream, xmppRoster, window, viewController, password, isOpen, _chatDelegate, _messageDelegate;
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     [self disconnect];
@@ -26,6 +26,13 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     [self connect];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+//    self.window.rootViewController = self.viewController;
+//    [self.window makeKeyAndVisible];
+
+    return YES;
 }
 
 - (void)setupStream{
@@ -77,13 +84,14 @@
 - (void)disconnect{
     [self goOffline];
     [xmppStream disconnect];
+    [_chatDelegate didDisconnect];
 }
 
 #pragma mark - XMPP delegates
 
 - (void)xmppStreamDidConnect:(XMPPStream *)sender {
     // connection to the server successful
-    open = YES;
+    isOpen = YES;
     NSError *error = nil;
     [[self xmppStream] authenticateWithPassword:password error:&error];
 }
@@ -91,6 +99,10 @@
 - (void)xmppStreamDidAuthenticate:(XMPPStream *)sender {
     // authentication successful
     [self goOnline];
+}
+
+- (BOOL)xmppStream:(XMPPStream *)sender didReceiveIQ:(XMPPIQ *)iq{
+    return NO;
 }
 
 
@@ -104,6 +116,10 @@
     [m setObject:from forKey:@"sender"];
 
     [_messageDelegate newMessageReceived:m];
+
+
+#pragma mark Check app in background
+    //here!
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence {
