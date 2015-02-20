@@ -13,6 +13,8 @@
 - (void)setupStream;
 - (void)goOnline;
 - (void)goOffline;
+- (void)goAway;
+- (void)goDND;
 
 @end
 
@@ -21,18 +23,54 @@
 @synthesize xmppStream, xmppRoster, window, viewController, password, isOpen, _chatDelegate, _messageDelegate;
 
 - (void)applicationWillResignActive:(UIApplication *)application {
-    [self disconnect];
+//    [self disconnect];
+    NSLog(@"applicationWillResignActive ");
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    [self connect];
+//    [self connect];
+    NSLog(@"applicationDidBecomeActive ");
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
 //    self.window.rootViewController = self.viewController;
 //    [self.window makeKeyAndVisible];
 
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(xmppStream:didReceiveMessage:) name:@"newMessage" object:nil];
+
+    // Register for notifications
+    [self registerForRemoteNotification];
+
     return YES;
+}
+
+- (void)registerForRemoteNotification{
+    float version = [[[UIDevice currentDevice] systemVersion] floatValue];
+    UIUserNotificationType types  = UIUserNotificationTypeSound | UIUserNotificationTypeBadge | UIUserNotificationTypeAlert;
+
+    if (version >= 8.0) {
+        UIUserNotificationSettings *notificationsSettings = [UIUserNotificationSettings settingsForTypes:types categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:notificationsSettings];
+    } else {
+        [[UIApplication sharedApplication] registerForRemoteNotificationTypes:types];
+    }
+}
+
+- (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
+{
+    application.applicationIconBadgeNumber -= notification.applicationIconBadgeNumber;
+}
+
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+    NSLog(@"applicationDidEnterBackground ");
+    [self goDND];
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application{
+    NSLog(@"applicationDidEnterForeground ");
+    [self goOnline];
 }
 
 - (void)setupStream{
@@ -47,6 +85,24 @@
 
 - (void)goOffline{
     XMPPPresence *presence = [XMPPPresence presenceWithType:@"unavailable"];
+    [[self xmppStream] sendElement:presence];
+}
+
+- (void)goAway{
+    XMPPPresence *presence = [XMPPPresence presence];
+    DDXMLNode *show = [DDXMLNode elementWithName:@"show" stringValue:@"away"];
+    [presence addChild:show];
+    DDXMLNode *status = [DDXMLNode elementWithName:@"status" stringValue:@"Away"];
+    [presence addChild:status];
+
+    [[self xmppStream] sendElement:presence];
+}
+
+- (void)goDND{
+    XMPPPresence *presence = [XMPPPresence presence];
+    DDXMLNode *show = [DDXMLNode elementWithName:@"show" stringValue:@"dnd"];
+    [presence addChild:show];
+
     [[self xmppStream] sendElement:presence];
 }
 
@@ -107,22 +163,39 @@
 
 
 - (void)xmppStream:(XMPPStream *)sender didReceiveMessage:(XMPPMessage *)message {
+    NSLog(@"didReveiceMessage: %@",message.description);
+    NSLog(@" a");
+
     // message received
     NSString *msg = [[message elementForName:@"body"] stringValue];
     NSString *from = [[message attributeForName:@"from"] stringValue];
 
-    NSMutableDictionary *m = [[NSMutableDictionary alloc] init];
-    [m setObject:msg forKey:@"msg"];
-    [m setObject:from forKey:@"sender"];
+    if (msg == nil) {
+        msg = @"nil";
+    }
+    if ([message isMessageWithBody]) {
+        NSMutableDictionary *m = [[NSMutableDictionary alloc] init];
+        [m setObject:msg forKey:@"msg"];
+        [m setObject:from forKey:@"sender"];
 
-    [_messageDelegate newMessageReceived:m];
-
+        [_messageDelegate newMessageReceived:m];
 
 #pragma mark Check app in background
-    //here!
+        //here!
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) {
+            UILocalNotification* localNotif = [[UILocalNotification alloc] init];
+            localNotif.alertBody = [NSString stringWithFormat:@"%@:\n%@", from, msg];
+            localNotif.applicationIconBadgeNumber = ++[UIApplication sharedApplication].applicationIconBadgeNumber;
+            localNotif.repeatInterval = 0;
+            [[UIApplication sharedApplication]  presentLocalNotificationNow:localNotif];
+        }
+
+    }
 }
 
 - (void)xmppStream:(XMPPStream *)sender didReceivePresence:(XMPPPresence *)presence {
+    NSLog(@"didReceivePresence: %@",presence.description);
+    NSLog(@" ");
     // a buddy went offline/online
     NSString *presenceType = [presence type];   // online/offline
     NSString *myUsername = [[sender myJID] user];
