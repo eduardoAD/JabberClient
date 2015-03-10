@@ -89,7 +89,9 @@
 }
 
 - (void)goAway{
-    XMPPPresence *presence = [XMPPPresence presence];
+    NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
+
+    [presence setXmlns:@"jabber:client"];
     DDXMLNode *show = [DDXMLNode elementWithName:@"show" stringValue:@"away"];
     [presence addChild:show];
     DDXMLNode *status = [DDXMLNode elementWithName:@"status" stringValue:@"Away"];
@@ -99,9 +101,19 @@
 }
 
 - (void)goDND{
-    XMPPPresence *presence = [XMPPPresence presence];
+//    XMPPPresence *presence = [XMPPPresence presence];
+//    [presence setXmlns:@"jabber:client"];
+//    DDXMLNode *show = [DDXMLNode elementWithName:@"show" stringValue:@"dnd"];
+//    [presence addChild:show];
+
+    NSXMLElement *presence = [NSXMLElement elementWithName:@"presence"];
+    [presence setXmlns:@"jabber:client"];
     DDXMLNode *show = [DDXMLNode elementWithName:@"show" stringValue:@"dnd"];
     [presence addChild:show];
+    //[presence addAttributeWithName:@"type" stringValue:@"unavailable"];
+
+    NSLog(@"goDND: %@",presence.description);
+    NSLog(@" ");
 
     [[self xmppStream] sendElement:presence];
 }
